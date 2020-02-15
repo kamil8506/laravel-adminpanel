@@ -32,8 +32,9 @@ class RegisterRequest extends Request
             'last_name'            => 'required|max:255',
             'email'                => ['required', 'email', 'max:255', Rule::unique('users')],
             'password'             => 'required|min:8|confirmed|regex:"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"',
+            'phone'       		   => 'required|numeric|digits:10',
             'is_term_accept'       => 'required',
-            'g-recaptcha-response' => 'required_if:captcha_status,true|captcha',
+            //'g-recaptcha-response' => 'required_if:captcha_status,true|captcha',
         ];
     }
 
@@ -43,7 +44,7 @@ class RegisterRequest extends Request
     public function messages()
     {
         return [
-            'g-recaptcha-response.required_if' => trans('validation.required', ['attribute' => 'captcha']),
+           // 'g-recaptcha-response.required_if' => trans('validation.required', ['attribute' => 'captcha']),
             'password.regex'                   => 'Password must contain at least 1 uppercase letter and 1 number.',
         ];
     }

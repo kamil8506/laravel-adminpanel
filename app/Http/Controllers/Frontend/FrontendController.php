@@ -32,4 +32,20 @@ class FrontendController extends Controller
         return view('frontend.pages.index')
             ->withpage($result);
     }
+	
+	/**
+     * About us.
+     */
+    public function aboutus()
+    {
+         return view('frontend.aboutus');
+    }   
+	
+	/**
+     * Services.
+     */
+	public function services()
+    {
+         return view('frontend.services');
+    }
 }

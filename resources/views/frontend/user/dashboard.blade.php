@@ -1,12 +1,36 @@
 @extends('frontend.layouts.app')
 
 @section('content')
+<div class="page-banner-area bg-img-3 pt-95 pb-90">
+	<div class="container">
+		<div class="row">
+			<div class="page-banner-content col-12 text-center">
+				<h2>{{ trans('navs.frontend.dashboard') }}</h2>
+				<p>Pocket Law is the best Law Firm. We solve your problems  tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="make-an-appoinment-area mt-30 mb-30">
+	<div class="row">
+		<div class="col-12">
+			<!--Section Title Start-->
+			<div class="section-title text-center mb-40">
+				<img src="../img/icon/icon1.png" alt="">
+				<h4>Dashboard</h4>
+			</div>
+			<!--Section Title End-->
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+	<div class="col-12 ml-auto mr-auto">
     <div class="row">
 
         <div class="col-xs-12">
 
             <div class="panel panel-default">
-                <div class="panel-heading">{{ trans('navs.frontend.dashboard') }}</div>
+             
 
                 <div class="panel-body">
 
@@ -136,4 +160,8 @@
         </div><!-- col-md-10 -->
 
     </div><!-- row -->
+						</div>
+		</div>
+	</div>
+</div>
 @endsection

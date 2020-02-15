@@ -47,6 +47,7 @@ return [
             'edit'   => 'Edit',
             'update' => 'Update',
             'view'   => 'View',
+			'reply'   => 'Reply',
         ],
 
         'save' => 'Save',

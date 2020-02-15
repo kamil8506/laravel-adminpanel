@@ -73,6 +73,7 @@ class DashboardController extends Controller
             $results['permissions'] = $permissions;
             $results['rolePermissions'] = $rolePermissions;
             $results['allPermissions'] = $rsRolePermissions->all;
+			//print_r("<pre>");print_r($results);print_r("</pre>");
             echo json_encode($results);
             die;
         }

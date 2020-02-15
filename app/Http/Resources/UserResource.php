@@ -20,6 +20,7 @@ class UserResource extends Resource
             'first_name'      => $this->first_name,
             'last_name'       => $this->last_name,
             'email'           => $this->email,
+            'phone'           => $this->phone,
             'picture'         => $this->getPicture(),
             'confirmed'       => $this->confirmed,
             'role'            => optional($this->roles()->first())->name,

@@ -12,7 +12,7 @@ use App\Http\Utilities\NotificationIos;
 use App\Http\Utilities\PushNotification;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-
+use App\Repositories\Frontend\Ticket\TicketRepository;
 /**
  * Class LoginController.
  */
@@ -24,13 +24,14 @@ class LoginController extends Controller
      * @var \App\Http\Utilities\PushNotification
      */
     protected $notification;
-
+	protected $repository;
     /**
      * @param NotificationIos $notification
      */
-    public function __construct(PushNotification $notification)
+    public function __construct(PushNotification $notification, TicketRepository $repository)
     {
         $this->notification = $notification;
+        $this->repository = $repository;
     }
 
     /**
@@ -43,8 +44,18 @@ class LoginController extends Controller
         if (access()->allow('view-backend')) {
             return route('admin.dashboard');
         }
-
-        return route('frontend.user.dashboard');
+		$totalnoofquery =  0;
+		$Purchansequery = 0;
+		$remainquery = 0;
+		$totalnoofquery = $this->repository->getTotalNoOfQuery();
+		$Purchansequery = $this->repository->getTotalNoOfQueryPurchase();
+		$remainquery = $Purchansequery - $totalnoofquery;
+		$with = array('totalquery'=>$Purchansequery, 'remainingquery'=>$remainquery);
+		if($remainquery > 0){
+		return route('frontend.user.tickets.index', $with);
+		}else{
+        return route('frontend.user.package');
+		}
     }
 
     /**

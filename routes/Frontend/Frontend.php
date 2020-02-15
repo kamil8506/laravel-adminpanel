@@ -7,7 +7,8 @@
 Route::get('/', 'FrontendController@index')->name('index');
 Route::post('/get/states', 'FrontendController@getStates')->name('get.states');
 Route::post('/get/cities', 'FrontendController@getCities')->name('get.cities');
-
+Route::get('aboutus', 'FrontendController@aboutus')->name('aboutus');
+Route::get('services', 'FrontendController@services')->name('services');
 /*
  * These frontend controllers require the user to be logged in
  * All route names are prefixed with 'frontend.'
@@ -29,6 +30,19 @@ Route::group(['middleware' => 'auth'], function () {
          */
         Route::patch('profile/update', 'ProfileController@update')->name('profile.update');
 
+        /*
+         * Packages List
+         */
+        Route::get('package', 'PackageController@index')->name('package');
+		//Route::get('package/purchase/{packageid}', 'PackageController@purchasePackage')->name('package.purchase');
+		Route::post('package/purchase', 'PackageController@purchasePackage')->name('package.purchase');
+		
+		Route::group( ['namespace' => 'Ticket'], function () {
+		Route::resource('tickets', 'TicketsController');
+        Route::post('tickets/storereply', 'TicketsController@storereply')->name('tickets.storereply');
+        //For Datatable
+        Route::post('tickets/get', 'TicketsTableController')->name('tickets.get');
+		});
         /*
          * User Profile Picture
          */

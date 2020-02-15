@@ -165,8 +165,22 @@ return [
                 'seo_description' => 'SEO Description',
                 'is_active'       => 'Active',
             ],
-
-            'blogcategories' => [
+			 'packages' => [
+                'package_name' => 'Package Name',
+                'Totalsms'     => 'Total SMS',
+                'Amount' 	   => 'Package Amount',
+                'Discription'  => 'Package Description',
+				'status'       => 'Status',
+              ],
+			  'tickets' => [
+                'ticketnum'   	=> 'Ticket Id',
+				'subject'		=> 'Ticket Subject',
+				'message'		=> 'Ticket Message',
+				'created_by'    => 'Created by',
+				'ticket_document' => 'Upload Document',
+				'status'		=> 'Status',
+              ],
+			'blogcategories' => [
                 'title'     => 'Blog Category',
                 'is_active' => 'Active',
             ],
@@ -227,6 +241,7 @@ return [
         'frontend' => [
             'register-user' => [
                 'email'                     => 'E-mail Address',
+                'phone'                     => 'Phone',
                 'firstName'                 => 'First Name',
                 'lastName'                  => 'Last Name',
                 'password'                  => 'Password',

@@ -23,8 +23,10 @@ return [
         'login'     => 'Login',
         'macros'    => 'Macros',
         'register'  => 'Register',
-
-        'user' => [
+		'package'   => 'Package',
+		'ticket'    =>  'Ticket',
+		
+		'user' => [
             'account'         => 'My Account',
             'administration'  => 'Administration',
             'change_password' => 'Change Password',

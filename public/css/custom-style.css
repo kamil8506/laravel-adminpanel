@@ -252,7 +252,7 @@ textarea.form-control { max-width: 100%; min-height: 50px; }
 
 /*Custom Fileinputs start*/
 .custom-file-input input[type=file] { display: none; }
-.custom-file-input .inputfile + label { max-width: 100%; font-size: 14px; font-weight: 500 text-overflow: ellipsis; white-space: nowrap; cursor: pointer; display: inline-block; padding: 8px 12px; margin-bottom: 0; height: 36px; border:1px solid var(--theme-co) }
+.custom-file-input .inputfile + label { max-width: 100%; font-size: 14px; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; display: inline-block; padding: 8px 12px; margin-bottom: 0; height: 36px; border:1px solid var(--theme-co) }
 .custom-file-input .inputfile + label .fa { margin-right: 10px; }
 .custom-file-input .inputfile:focus + label,.custom-file-input .inputfile.has-focus + label { outline: 1px dotted #000; outline: -webkit-focus-ring-color auto 5px; }
 
@@ -343,6 +343,12 @@ ul.timeline.notification-list>li>.timeline-item>.timeline-header>span.comment-hl
 .panel-body.js-tabcollapse-panel-body { box-shadow: inset 1px 1px 5px rgba(0,0,0,.15); }
 .setting-block .panel-group .panel-heading { padding: 0; }
 .setting-block .panel-group .panel-title>a { padding: 10px 15px; display: block; }
+
+.pricing-item {
+    padding: 40px 20px;
+    background: #fff;
+    box-shadow: 0 8px 15px 0 rgba(5, 57, 106, 0.06);
+}
 
 /*Responsive CSS start*/
 @media screen and (max-width: 767px){
